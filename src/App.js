@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Layout,PageHeader} from 'antd';
 import './App.css';
+import LoginForm from './Components/Login.js';
+import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Exam from './Exam.js'
+const { Header, Content, Footer } = Layout;
 
-function App() {
+export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Layout className="layout">
+        <Header>
+          <PageHeader
+            ghost={false}
+            className="site-page-header"
+            title="myExams - Log In"
+          />
+        </Header>
+        <Content style={{ padding: "0 50px" }}>
+          <Switch>
+            <Route path="/exam">
+              <Exam />
+            </Route>
+            <Route path="/">
+              <LoginForm />
+            </Route>
+          </Switch>
+          <Footer style={{ textAlign: "center" }}>
+            Ant Design ©2018 Created by Ant UED
+          </Footer>
+        </Content>
+      </Layout>
+    </Router>
   );
 }
 
-export default App;
