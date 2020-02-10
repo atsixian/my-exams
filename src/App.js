@@ -4,6 +4,7 @@ import './App.css';
 import LoginForm from './Components/Login.js';
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Exam from './Exam.js'
+import {AuthRoute} from './Components/Auth.js'
 const { Header, Content, Footer } = Layout;
 
 export default () => {
@@ -19,9 +20,7 @@ export default () => {
         </Header>
         <Content style={{ padding: "0 50px" }}>
           <Switch>
-            <Route path="/exam">
-              <Exam />
-            </Route>
+            <AuthRoute path="/exam" component={Exam}/>
             <Route path="/">
               <LoginForm />
             </Route>

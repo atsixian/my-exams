@@ -3,40 +3,20 @@ import "antd/dist/antd.css";
 import "../index.css";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import axios from "axios";
-import jwtDecode from "jwt-decode";
-import {useHistory} from "react-router-dom"
-
-const getToken = async (username, password) => {
-  let res = await axios.post(
-    "https://ninshou.test.ctf.science.mcgill.ca/api/v1/authenticate/simple",
-    { email: username, password: password }
-  );
-  return res.data;
-};
-
-const getCourses = async token => {
-  const shortUser = jwtDecode(token).sub;
-  const headers = { Authorization: `Bearer ${token}` };
-  let res = await axios.get(
-    `https://attrispool.test.ctf.science.mcgill.ca/api/v1/users/${shortUser}`,
-    { headers }
-  );
-  return res.data.courses;
-};
+import { useHistory } from "react-router-dom";
+import { getCourses, getToken } from "./Auth.js";
 
 export default () => {
   const history = useHistory();
   const onFinish = async values => {
-    //TODO: Redirect after click submit
     try {
-      const {username, password} = values
-      // const token = await getToken(username.concat("@mail.mcgill.ca"), password);
-      // const courses = await getCourses(token);
-      // console.log("First course: ", courses[0]);
+      const token = await getToken(values);
+      const courses = await getCourses(token);
+      console.log(courses[0])
       history.push("/exam");
     } catch (err) {
-      console.log(err)
+      // TODO: tell the user they failed to login
+      console.log(err);
     }
   };
   return (
