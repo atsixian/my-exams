@@ -4,15 +4,19 @@ import "../index.css";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
-import { getCourses, getToken } from "./Auth.js";
+import {useCookies} from 'react-cookie';
+import { getToken } from "./Auth.js";
+
 
 export default () => {
+  
   const history = useHistory();
+  const [cookies, setCookie] = useCookies(["jwt"]);
+
   const onFinish = async values => {
     try {
       const token = await getToken(values);
-      const courses = await getCourses(token);
-      console.log(courses[0])
+      setCookie("jwt", token);
       history.push("/exam");
     } catch (err) {
       // TODO: tell the user they failed to login
