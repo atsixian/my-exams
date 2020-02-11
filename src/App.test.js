@@ -1,10 +1,39 @@
-import sum from './Functions/sum';
 import toTable from './Functions/toTable'
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
+//test conflict
+let input2=[
+  {
+    "COURSE NUMBER": "COMP 302",
+    "SECTION": "001",
+    "TITLE": "Intro to CS",
+    "EXAM DATE": "04/20/2019",
+    "TIME": "9:00",
+    "BUILDING": "GYM",
+    "ROOM": "Fieldhouse",
+    "ROW": "20-22",
+    "FROM": "AAA",
+    "TO": "ZZZ"
+  },
+  {
+    "COURSE NUMBER": "COMP 250",
+    "SECTION": "001",
+    "TITLE": "Intro to CS",
+    "EXAM DATE": "04/20/2019",
+    "TIME": "9:00",
+    "BUILDING": "GYM",
+    "ROOM": "Fieldhouse",
+    "ROW": "11-15",
+    "FROM": "AAA",
+    "TO": "ZZZ"
+  },
+]
 
+let output2 = [{
+  key: "Apr 20",
+  morning: ["COMP 250", "GYM","Fieldhouse", "11-15"],
+  afternoon: [],
+  night: []
+},]
 
 let input1 = [{
   "COURSE NUMBER": "COMP 250",
@@ -45,16 +74,20 @@ let input1 = [{
 
 let output1 = [{
   key: "Apr 20",
-  morning: ["COMP 250", "GYM","Fieldhouse", "Row 11-15"],
-  afternoon: ["COMP 202", "GYM", "Fieldhouse", "Row 11-15"],
+  morning: ["COMP 250", "GYM","Fieldhouse", "11-15"],
+  afternoon: ["COMP 202", "GYM", "Fieldhouse", "11-15"],
   night: []
 },
 {
   key: "Apr 21",
-  morning: ["COMP 273","GYM","Fieldhouse", "Row 11-15"],
+  morning: ["COMP 273","GYM","Fieldhouse", "11-15"],
   afternoon: [],
   night: []
 },];
+
 test('testing toTable with 3 courses on 2 different days', () => {
   expect(toTable(input1)).toEqual(output1);
+});
+test('testing 2 conflicting exams', () => {
+  expect(toTable(input2)).toEqual(output2);
 });

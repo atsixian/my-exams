@@ -36,7 +36,7 @@ function toTable(data){
             course["COURSE NUMBER"],
             course["BUILDING"],
             course["ROOM"],
-            `Row ${course["ROW"]}`
+            course["ROW"]
           ])
       );
       res.push(row);
