@@ -11,6 +11,7 @@ export default () => {
   const [cookies, _] = useCookies(["jwt"])
   const courses = useGetCourses(cookies.jwt);
   // courses ? [...filterCourses(courses)].map(course => <li key={course.name}>{course}</li>) : <h1>NONO</h1>
+  
   return <ExamTable courses = {toTable(filterExams([...filterCourses(courses)]))}/>
 }
 
