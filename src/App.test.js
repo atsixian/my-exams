@@ -1,7 +1,45 @@
-import toTable from './Functions/toTable'
+import toTable from './Functions/toTable';
+import filterExams from './Functions/filterExams.js'
+
+
+const courses0 = 
+[
+  {"COURSE NUMBER": "COMP 250", "SECTION": "001"},
+  {"COURSE NUMBER": "MATH 240", "SECTION": "001"},
+];
+
+const exams0 = [
+  {
+    "COURSE NUMBER": "COMP 250",
+    "SECTION": "001",
+    "TITLE": "Intro to Computer Science",
+    "EXAM DATE": "12/16/2019",
+    "TIME": "9:00",
+    "BUILDING": "GYM",
+    "ROOM": "Fieldhouse",
+    "ROW": "1-24",
+    "FROM": "AAA",
+    "TO": "ZZZ"
+  },
+  {
+    "COURSE NUMBER": "MATH 240",
+    "SECTION": "001",
+    "TITLE": "Discrete Structures",
+    "EXAM DATE": "12/19/2019",
+    "TIME": "14:00",
+    "BUILDING": "GYM",
+    "ROOM": "Fieldhouse",
+    "ROW": "7-22",
+    "FROM": "AAA",
+    "TO": "ZZZ"
+  },];
+
+test('testing filterExams', () => {
+  expect(filterExams(courses0)).toEqual(exams0);
+});
 
 //test conflict
-let input2=[
+const exams2=[
   {
     "COURSE NUMBER": "COMP 302",
     "SECTION": "001",
@@ -28,14 +66,14 @@ let input2=[
   },
 ]
 
-let output2 = [{
+const tables2 = [{
   key: "Apr 20",
   morning: ["COMP 250", "GYM","Fieldhouse", "11-15"],
   afternoon: [],
   night: []
 },]
 
-let input1 = [{
+const exams1 = [{
   "COURSE NUMBER": "COMP 250",
   "SECTION": "001",
   "TITLE": "Intro to CS",
@@ -72,7 +110,7 @@ let input1 = [{
   "TO": "ZZZ"
 },];
 
-let output1 = [{
+const tables1 = [{
   key: "Apr 20",
   morning: ["COMP 250", "GYM","Fieldhouse", "11-15"],
   afternoon: ["COMP 202", "GYM", "Fieldhouse", "11-15"],
@@ -86,8 +124,8 @@ let output1 = [{
 },];
 
 test('testing toTable with 3 courses on 2 different days', () => {
-  expect(toTable(input1)).toEqual(output1);
+  expect(toTable(exams1)).toEqual(tables1);
 });
 test('testing 2 conflicting exams', () => {
-  expect(toTable(input2)).toEqual(output2);
+  expect(toTable(exams2)).toEqual(tables2);
 });
