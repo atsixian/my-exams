@@ -1,7 +1,8 @@
 import React from "react";
 import { useGetCourses } from "./Components/Auth.js";
 import {useCookies} from 'react-cookie'
-import ExamTable from './ExamTable'
+import ExamTable from './Components/ExamTable'
+import toTable from './Functions/toTable'
 
 const getSeason = curDate => {
   // Jan - April, May - August, August - December
@@ -33,6 +34,6 @@ export default () => {
   const [cookies] = useCookies(["jwt"])
   const [courses] = useGetCourses(cookies.jwt);
   // courses ? [...filterCourses(courses)].map(course => <li key={course.name}>{course}</li>) : <h1>NONO</h1>
-  return <ExamTable courses = {[...filterCourses(courses)]}/>
+  return <ExamTable courses = {toTable([...filterCourses(courses)])}/>
 }
 
