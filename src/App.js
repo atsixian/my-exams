@@ -26,7 +26,7 @@ export default () => {
               <Route path="/" component={LoginForm} />
             </Switch>
             <Footer style={{ textAlign: "center" }}>
-              Ant Design ©2018 Created by Ant UED
+              ©2020
             </Footer>
           </Content>
         </Layout>
