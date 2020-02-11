@@ -56,5 +56,5 @@ let output1 = [{
   night: []
 },];
 test('testing toTable with 3 courses on 2 different days', () => {
-  expect(toTable(input1)).toBe(output1);
+  expect(toTable(input1)).toEqual(output1);
 });
