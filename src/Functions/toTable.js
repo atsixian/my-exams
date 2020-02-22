@@ -2,7 +2,7 @@ function toTable(data){
     const timeSlots = new Map([
       ["9:00", "morning"],
       ["14:00", "afternoon"],
-      ["18:00", "night"]
+      ["18:30", "night"]
     ]);
 
     const dates = new Map();
