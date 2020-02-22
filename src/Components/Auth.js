@@ -17,7 +17,7 @@ export const useGetCourses = (token) => {
   // const [cookies] = useCookies(["jwt"])
   // const token = cookies.jwt;
   useEffect(() => {
-    async function getCourses() {
+    (async function getCourses() {
       const shortUser = jwtDecode(token).sub;
       const headers = {
         Authorization: `Bearer ${token}`
@@ -26,9 +26,8 @@ export const useGetCourses = (token) => {
         `https://attrispool.test.ctf.science.mcgill.ca/api/v1/users/${shortUser}`,
         { headers }
       );
-      setCourses([res.data.courses]);
-    }
-    getCourses();
+      setCourses(res.data.courses);
+    })();
   }, [token])
   return courses;
 } 
