@@ -13,12 +13,12 @@ type examInfo = {
     "FROM": string | null,
     "TO": string | null,
 };
-const data : Array<examInfo> = exams["data"];
+const data : Array<examInfo> = exams;
 type courseInfo = {'COURSE NUMBER':string,'SECTION':string};
 type filterType = (courses : Array<courseInfo>) => Array<examInfo>;
 
 export const filterExams : filterType = (courses) =>
-    exams.filter((exam : examInfo) : => 
+    data.filter((exam : examInfo) : boolean => 
         courses.some((course : courseInfo) =>
         course["COURSE NUMBER"]===exam["COURSE NUMBER"] && course["SECTION"]===exam["SECTION"])
     );
