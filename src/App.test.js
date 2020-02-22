@@ -1,5 +1,5 @@
 import toTable from './Functions/toTable';
-import filterExams from './Functions/filterExams.js'
+import filterExams from './Functions/filterExams.ts'
 
 
 const courses0 = 
@@ -13,23 +13,23 @@ const exams0 = [
     "COURSE NUMBER": "COMP 250",
     "SECTION": "001",
     "TITLE": "Intro to Computer Science",
-    "EXAM DATE": "12/16/2019",
+    "EXAM DATE": "24-Apr",
     "TIME": "9:00",
     "BUILDING": "GYM",
-    "ROOM": "Fieldhouse",
-    "ROW": "1-24",
+    "ROOM": "FIELD HOUSE",
+    "ROW": "1-23",
     "FROM": "AAA",
     "TO": "ZZZ"
   },
   {
     "COURSE NUMBER": "MATH 240",
     "SECTION": "001",
-    "TITLE": "Discrete Structures",
-    "EXAM DATE": "12/19/2019",
+    "TITLE": "Discrete Structures 1",
+    "EXAM DATE": "18-Apr",
     "TIME": "14:00",
     "BUILDING": "GYM",
-    "ROOM": "Fieldhouse",
-    "ROW": "7-22",
+    "ROOM": "FIELD HOUSE",
+    "ROW": "10-20",
     "FROM": "AAA",
     "TO": "ZZZ"
   },];

@@ -17,9 +17,11 @@ const data : Array<examInfo> = exams;
 type courseInfo = {'COURSE NUMBER':string,'SECTION':string};
 type filterType = (courses : Array<courseInfo>) => Array<examInfo>;
 
-export const filterExams : filterType = (courses) =>
+const filterExams : filterType = (courses) =>
     data.filter((exam : examInfo) : boolean => 
         courses.some((course : courseInfo) =>
         course["COURSE NUMBER"]===exam["COURSE NUMBER"] && course["SECTION"]===exam["SECTION"])
     );
 ;
+export default filterExams;
+//module.exports = filterExams;
