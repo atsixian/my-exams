@@ -1,6 +1,5 @@
 //find exams in data.json from current courses
 import exams from '../Assets/data.json'
-//const exams = require('../../assets/data.json');
 type examInfo = {
     "COURSE NUMBER": string,
     "SECTION": string,
@@ -24,4 +23,3 @@ const filterExams : filterType = (courses) =>
     );
 ;
 export default filterExams;
-//module.exports = filterExams;

@@ -99,8 +99,8 @@ const courses0 =
   {"COURSE NUMBER": "MATH 240", "SECTION": "001"},
 ];
 
-test('testing filterCourses', () => {
-  expect(filterCourses(list0).toEqual(courses0));
+test("testing filterCourses", () => {
+  expect(filterCourses(list0)).toEqual(expect.arrayContaining(courses0));
 });
 
 const exams0 = [

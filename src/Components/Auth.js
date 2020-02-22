@@ -33,7 +33,7 @@ export const useGetCourses = (token) => {
 } 
 
 export const AuthRoute = ({ component: Component, ...rest }) => {
-  const [cookies, setCookie] = useCookies(["jwt"]);
+  const [cookies, _] = useCookies(["jwt"]);
   
   return (
     <Route
