@@ -10,7 +10,10 @@ import toTable from './Functions/toTable';
 export default () => {
   const [cookies, _] = useCookies(["jwt"])
   const courses = useGetCourses(cookies.jwt);
-  if(courses.length < 2){return null;} //dirty fix of useEffect
-  let currentResult = filterCourses(courses);
-  return <ExamTable courses = {toTable(filterExams(currentResult))}/>}
+  if(courses.length < 2){return null;} //fix of useEffect
+  //let currentResult = toTable(filterExams(filterCourses(courses)));
+  //console.log(currentResult);
+  //return null;
+  return (<ExamTable courses = {toTable(filterExams(currentResult))}/>);
+}
 

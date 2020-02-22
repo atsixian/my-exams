@@ -7,7 +7,7 @@ import { useCookies } from "react-cookie";
 export const getToken = async ({ username, password }) => {
   const res = await axios.post(
     "https://ninshou.test.ctf.science.mcgill.ca/api/v1/authenticate/simple",
-    { email: username.concat("@mail.mcgill.ca"), password: password }
+    { email: username+("@mail.mcgill.ca"), password: password }
   );
   return res.data;
 };
