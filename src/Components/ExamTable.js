@@ -25,11 +25,11 @@ const columns = [
   }
 ];
 
-export default (courses) => {
+export default (props) => {
     return(
     <Table
       columns={columns}
-      dataSource={courses}
+      dataSource={props.courses}
       bordered
       title={() => "My Exam Schedules"}
       footer={() => "Export To Calendar"}
