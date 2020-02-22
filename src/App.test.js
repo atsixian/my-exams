@@ -100,7 +100,7 @@ const courses0 =
 ];
 
 test('testing filterCourses', () => {
-  expect(filterCourses(list0).toEqual(courses0));
+  expect(filterCourses(list0)).toEqual(courses0);
 });
 
 const exams0 = [
