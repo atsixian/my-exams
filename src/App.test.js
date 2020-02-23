@@ -223,6 +223,49 @@ const tables1 = [
   }
 ];
 
+const exams3 = [
+  {
+    "COURSE NUMBER": "COMP 250",
+    SECTION: "001",
+    TITLE: "Intro to CS",
+    "EXAM DATE": "04/20/2019",
+    TIME: "9:00",
+    BUILDING: "GYM",
+    ROOM: "Fieldhouse",
+    ROW: "11-15",
+    FROM: "AAA",
+    TO: "ZZZ"
+  },
+  {
+    "COURSE NUMBER": "COMP 202",
+    SECTION: "001",
+    TITLE: "Intro to CS",
+    "EXAM DATE": "04/15/2019",
+    TIME: "14:00",
+    BUILDING: "GYM",
+    ROOM: "Fieldhouse",
+    ROW: "11-15",
+    FROM: "AAA",
+    TO: "ZZZ"
+  },
+]
+
+const tables3 = [
+  {
+    key: "Apr 15",
+    morning: [],
+    afternoon: ["COMP 202", "GYM", "Fieldhouse", "11-15"],
+    night: []
+  },
+  {
+    key: "Apr 20",
+    morning: ["COMP 250", "GYM", "Fieldhouse", "11-15"],
+    afternoon: [],
+    night: []
+  },
+
+];
+
 test("testing toTable with 3 courses on 2 different days", () => {
   expect(toTable(exams1)).toEqual([
     tables1,
@@ -242,4 +285,8 @@ test("testing 2 return value for conflicting exams", () => {
       "Apr 20": { time: "9:00", courses: expect.arrayContaining(["COMP 250", "COMP 302"]) }
     })
   );
+});
+
+test("testing order of dates", () =>{
+  expect(toTable(exams3)[0]).toEqual(tables3)
 });

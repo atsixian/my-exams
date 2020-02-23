@@ -55,5 +55,6 @@ export default data => {
     );
     res.push(row);
   }
+  res.sort((c1, c2) => c1.key > c2.key ? 1 : -1);
   return [res, conflicts];
 };
