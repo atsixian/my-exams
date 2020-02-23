@@ -5,7 +5,7 @@ import LoginForm from './Components/Login.js';
 import { CookiesProvider } from "react-cookie";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Exam from './Exam.js'
-import {AuthRoute, useGetCourses} from './Components/Auth.js'
+import {AuthRoute} from './Components/Auth.js'
 const { Header, Content, Footer } = Layout;
 
 export default () => {
@@ -17,12 +17,12 @@ export default () => {
             <PageHeader
               ghost={false}
               className="site-page-header"
-              title="myExams - Log In"
+              title="myExams"
             />
           </Header>
           <Content style={{ padding: "0 50px" }}>
             <Switch>
-              <AuthRoute path="/exam" onChange={useGetCourses} component={Exam} />
+              <AuthRoute path="/exam" component={Exam} />
               <Route path="/" component={LoginForm} />
             </Switch>
             <Footer style={{ textAlign: "center" }}>

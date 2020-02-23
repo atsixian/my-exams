@@ -5,12 +5,18 @@ import ExamTable from './Components/ExamTable';
 import {filterCourses} from './Functions/filterCourses';
 import filterExams from './Functions/filterExams.ts';
 import toTable from './Functions/toTable';
-// TODO: create a logout function, clear cookies for safety
+import LogoutButton from './Components/LogoutButton'
 
 export default () => {
-  const [cookies, _] = useCookies(["jwt"])
+  const [cookies] = useCookies(["jwt"])
   const courses = useGetCourses(cookies.jwt);
   if(courses.length < 2){return null;} //fix of useEffect
-  return (<ExamTable courses = {toTable(filterExams(filterCourses(courses)))}/>);
+  return (
+    // TODO: Find a good place for logout Button
+    <React.Fragment>
+      <LogoutButton/>
+      <ExamTable courses={toTable(filterExams(filterCourses(courses)))} />
+    </React.Fragment>
+  );
 }
 

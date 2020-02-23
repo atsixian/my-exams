@@ -32,7 +32,8 @@ export default (props) => {
       dataSource={props.courses}
       bordered
       title={() => "My Exam Schedules"}
-      footer={() => "Export To Calendar"}
-    />
+        footer={() => <React.Fragment>"Export To Calendar"
+        </React.Fragment>}
+      />
     );
 }
