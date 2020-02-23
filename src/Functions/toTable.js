@@ -1,4 +1,5 @@
-function toTable(data){
+import formatDate from './formatDate';
+export default (data)=>{
     const timeSlots = new Map([
       ["9:00", "morning"],
       ["14:00", "afternoon"],
@@ -20,10 +21,7 @@ function toTable(data){
     const res = [];
 
     for (let [day, courses] of dates) {
-      //if date format is "20-Apr" instead of "04/20/2019"
-      if(day.length < 10){
-        day += '-2020';
-      }
+      day = formatDate(day);
       let row = {
         key: new Date(day).toLocaleString("en-us", {
           month: "short",
@@ -47,4 +45,3 @@ function toTable(data){
     }
     return res;
 }
-module.exports = toTable;

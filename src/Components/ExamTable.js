@@ -1,12 +1,15 @@
 import React from "react";
 import "antd/dist/antd.css";
 import { Table } from "antd";
+import toTable from '../Functions/toTable';
 import {
   CalendarTwoTone, 
   HomeTwoTone,
   BookTwoTone,
   CompassTwoTone,
 } from '@ant-design/icons';
+import toEvents from '../Functions/toEvents';
+import ExportToCalendar from "./ExportToCalendar.js";
 
 const tableCellStyle = (exam)=>{
   if (exam.length < 2) {return null;}
@@ -42,13 +45,16 @@ const columns = [
 ];
 
 export default (props) => {
+    //prepare props for ExportToCalendar
+    let tableData = toTable(props.exams);
+    let eventData = toEvents(props.exams);
     return(
     <Table
       columns={columns}
-      dataSource={props.courses}
+      dataSource={tableData}
       bordered
       title={() => (<div> My Exam Schedules</div>)}
-      footer={() => (<div><CalendarTwoTone twoToneColor="#eb2f96"/> Export To Calendar</div>)}
+      footer={() => (<div><CalendarTwoTone twoToneColor="#eb2f96"/><ExportToCalendar exams = {eventData}/></div>)}
     />
     );
 }
