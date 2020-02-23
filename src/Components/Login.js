@@ -11,7 +11,7 @@ import { getToken } from "./Auth.js";
 export default () => {
   
   const history = useHistory();
-  const [cookies, setCookie] = useCookies(["jwt"]);
+  const [, setCookie] = useCookies(["jwt"]);
 
   const onFinish = async values => {
     try {
