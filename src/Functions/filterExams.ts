@@ -1,5 +1,5 @@
 //find exams in data.json from current courses
-import exams from '../Assets/data.json'
+import exams from '../Assets/data_winter2019.json'
 type examInfo = {
     "COURSE NUMBER": string,
     "SECTION": string,

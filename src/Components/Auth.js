@@ -14,8 +14,6 @@ export const getToken = async ({ username, password }) => {
 
 export const useGetCourses = token => {
   const [courses, setCourses] = useState([]);
-  // const [cookies] = useCookies(["jwt"])
-  // const token = cookies.jwt;
   useEffect(() => {
     (async function getCourses() {
       if (token) {

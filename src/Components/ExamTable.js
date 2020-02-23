@@ -1,25 +1,28 @@
 import React from "react";
 import "antd/dist/antd.css";
-import { Table } from "antd";
-import toTable from '../Functions/toTable';
+import { Table, Modal } from "antd";
+import toTable from "../Functions/toTable";
 import {
-  CalendarTwoTone, 
+  CalendarTwoTone,
   HomeTwoTone,
   BookTwoTone,
-  CompassTwoTone,
-} from '@ant-design/icons';
-import toEvents from '../Functions/toEvents';
+  CompassTwoTone
+} from "@ant-design/icons";
+import toEvents from "../Functions/toEvents";
 import ExportToCalendar from "./ExportToCalendar.js";
 
-const tableCellStyle = (exam)=>{
-  if (exam.length < 2) {return null;}
+const tableCellStyle = exam => {
+  if (exam.length < 2) {
+    return null;
+  }
   return (
     <div>
-    <BookTwoTone /> {exam[0]} <br/>
-    <HomeTwoTone /> {exam[1]} - {exam[2]} <br/>
-    <CompassTwoTone /> Row {exam[3]}
-    </div>);
-}
+      <BookTwoTone /> {exam[0]} <br />
+      <HomeTwoTone /> {exam[1]} - {exam[2]} <br />
+      <CompassTwoTone /> Row {exam[3]}
+    </div>
+  );
+};
 
 const columns = [
   {
@@ -44,17 +47,49 @@ const columns = [
   }
 ];
 
-export default (props) => {
-    //prepare props for ExportToCalendar
-    let tableData = toTable(props.exams);
-    let eventData = toEvents(props.exams);
-    return(
+export default props => {
+  // Test data
+  // const fake = {
+  //   "Apr 20": { time: "9:00", courses: ["COMP 250", "COMP 302"] },
+  //   "Apr 21": { time: "18:30", courses: ["COMP xxx", "MATH xxx"] }
+  // };
+
+  //prepare props for ExportToCalendar
+  const [tableData, conflicts] = toTable(props.exams);
+  if (
+    Object.entries(conflicts).length !== 0 &&
+    conflicts.constructor === Object
+  ) {
+    const modal = Modal.warning();
+    modal.update({
+      title: "Conflict Detected",
+      content: Object.keys(conflicts).map(
+        key => (
+          <li>
+            <strong>
+              {key} {conflicts[key].time}:
+            </strong>{" "}
+             {conflicts[key].courses.join(", ")}
+          </li>
+        )
+      ),
+    });
+
+    modal.visible = false;
+  }
+  let eventData = toEvents(props.exams);
+  return (
     <Table
       columns={columns}
       dataSource={tableData}
       bordered
-      title={() => (<div> My Exam Schedules</div>)}
-      footer={() => (<div><CalendarTwoTone twoToneColor="#eb2f96"/><ExportToCalendar exams = {eventData}/></div>)}
+      title={() => <div> My Exam Schedules</div>}
+      footer={() => (
+        <div>
+          <CalendarTwoTone twoToneColor="#eb2f96" />
+          <ExportToCalendar exams={eventData} />
+        </div>
+      )}
     />
-    );
-}
+  );
+};
