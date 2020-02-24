@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* global saveAs, Blob, console */
 import { saveAs } from 'file-saver';
 

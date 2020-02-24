@@ -62,7 +62,7 @@ export default () => {
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
               placeholder="McGill Password"
-              autocomplete="on"
+              autoComplete="on"
             />
           </Form.Item>
           <Form.Item>
