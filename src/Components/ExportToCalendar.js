@@ -29,7 +29,7 @@ class ExportToCalendar extends Component{
     });
     let downloadCal = ()=>cal.download();
         return(
-        <Button onClick={downloadCal}>Export to Calendar</Button>
+        <Button type="dashed" onClick={downloadCal}>Export to Calendar</Button>
         )
     }
 }

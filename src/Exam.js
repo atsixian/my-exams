@@ -4,7 +4,7 @@ import {useCookies} from 'react-cookie';
 import ExamTable from './Components/ExamTable';
 import {filterCourses} from './Functions/filterCourses';
 import filterExams from './Functions/filterExams.ts';
-import LogoutButton from './Components/LogoutButton'
+import {Flex, Box} from 'reflexbox'
 
 export default () => {
   const [cookies] = useCookies(["jwt"])
@@ -12,10 +12,11 @@ export default () => {
   if(courses.length < 2){return null;} //fix of useEffect
   return (
     // TODO: Find a good place for logout Button
-    <React.Fragment>
-      <LogoutButton/>
-      <ExamTable exams = {filterExams(filterCourses(courses))} />
-    </React.Fragment>
+    <Flex width="80%" mt="5%" flexWrap="wrap" flexDirection="column" justifyContent="stretch" alignContent="stretch">
+      <Box>
+        <ExamTable exams={filterExams(filterCourses(courses))} />
+      </Box>
+    </Flex>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import { Table, Modal } from "antd";
+import {Flex, Box} from 'reflexbox'
 import toTable from "../Functions/toTable";
 import {
   CalendarTwoTone,
@@ -10,6 +11,7 @@ import {
 } from "@ant-design/icons";
 import toEvents from "../Functions/toEvents";
 import ExportToCalendar from "./ExportToCalendar.js";
+import LogoutButton from './LogoutButton.js'
 
 const tableCellStyle = exam => {
   if (exam.length < 2) {
@@ -79,17 +81,25 @@ export default props => {
   }
   let eventData = toEvents(props.exams);
   return (
-    <Table
-      columns={columns}
-      dataSource={tableData}
-      bordered
-      title={() => <div> My Exam Schedules</div>}
-      footer={() => (
-        <div>
-          <CalendarTwoTone twoToneColor="#eb2f96" />
-          <ExportToCalendar exams={eventData} />
-        </div>
-      )}
-    />
+    <Flex>
+      <Box width="100%">
+        <Table
+          columns={columns}
+          dataSource={tableData}
+          bordered
+          pagination={false}
+          title={() => <div> My Exam Schedules</div>}
+          footer={() => (
+            <Flex>
+              <Box mx="auto">
+                <CalendarTwoTone twoToneColor="#eb2f96" />{" "}
+                <ExportToCalendar exams={eventData} />
+              </Box>
+              <LogoutButton/>
+            </Flex>
+          )}
+        />
+      </Box>
+    </Flex>
   );
 };
