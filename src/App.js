@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Exam from './Exam.js'
 import {AuthRoute} from './Components/Auth.js'
 import { Flex, Box } from "reflexbox";
+import ParticlesBg from "particles-bg";
 const { Header, Content, Footer } = Layout;
 
 export default () => {
@@ -30,6 +31,7 @@ export default () => {
           </Box>
         </Flex>
       </Router>
+      <ParticlesBg type="square" bg={true}/>
       {/* <Footer style={{ textAlign: "center" }}>
               ©2020
             </Footer>
