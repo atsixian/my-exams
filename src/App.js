@@ -6,31 +6,36 @@ import { CookiesProvider } from "react-cookie";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Exam from './Exam.js'
 import {AuthRoute} from './Components/Auth.js'
+import { Flex, Box } from "reflexbox";
 const { Header, Content, Footer } = Layout;
 
 export default () => {
   return (
     <CookiesProvider>
       <Router>
-        <Layout className="layout">
+        {/* <Layout className="layout">
           <Header>
             <PageHeader
               ghost={false}
               className="site-page-header"
               title="myExams"
             />
-          </Header>
-          <Content style={{ padding: "0 50px" }}>
-            <Switch>
-              <AuthRoute path="/exam" component={Exam} />
-              <Route path="/" component={LoginForm} />
-            </Switch>
-            <Footer style={{ textAlign: "center" }}>
+          </Header> */}
+        <Flex justifyContent="center" alignItems="center">
+          <Box maxWidth="300px">
+              <Switch>
+                <AuthRoute path="/exam" component={Exam} />
+                <Route path="/" component={LoginForm} />
+              </Switch>
+          </Box>
+        </Flex>
+      </Router>
+      {/* <Footer style={{ textAlign: "center" }}>
               ©2020
             </Footer>
           </Content>
         </Layout>
-      </Router>
+      </Router> */}
     </CookiesProvider>
   );
 }

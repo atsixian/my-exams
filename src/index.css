@@ -12,9 +12,7 @@ code {
     monospace;
 }
 
-.login-form {
-  max-width: 300px;
-}
+
 .login-form-button {
   width: 100%;
-}
+} 
