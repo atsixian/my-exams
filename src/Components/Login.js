@@ -73,6 +73,7 @@ export default () => {
             >
               Log in
             </Button>
+            <Button className="login-form-button">See a demo without login</Button>
           </Form.Item>
         </Form>
       </Box>

@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import LoginForm from "./Components/Login.js";
+import LoginForm from "./Components/Login";
 import { CookiesProvider } from "react-cookie";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Exam from "./Exam.js";
-import { AuthRoute } from "./Components/Auth.js";
+import { AuthRoute } from "./Components/Auth";
 import { Flex} from "reflexbox";
 import ParticlesBg from "particles-bg"; 
 export default () => {
