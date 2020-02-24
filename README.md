@@ -1,3 +1,6 @@
+# myExams
+## Finally, you can see all your exam schedules, effortlessly 
+
 - Log in with McGill account to see all your final exam schedules
 - No need to type or search
 - Export to  calendar
