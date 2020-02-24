@@ -31,7 +31,7 @@ export default () => {
           </Box>
         </Flex>
       </Router>
-      <ParticlesBg type="square" bg={true}/>
+      <ParticlesBg type="polygon" bg={true}/>
       {/* <Footer style={{ textAlign: "center" }}>
               ©2020
             </Footer>
