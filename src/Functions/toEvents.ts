@@ -13,16 +13,15 @@ type examInfo = {
     "TO": string | null,
 };
 
-export default (exams : examInfo[]): (string| null)[][] => {
+export default (exams : examInfo[]): (string| Date | null | Number[])[][] => {
     return exams.map(exam=>{
-        exam["EXAM DATE"] = formatDate(exam["EXAM DATE"]);
         return[
         exam["COURSE NUMBER"],
         exam["SECTION"],
         exam["ROOM"],
         exam["ROW"],
-        exam["EXAM DATE"],
-        exam["TIME"]
+        formatDate(exam["EXAM DATE"]),
+        exam["TIME"].split(':').map(n => Number(n))
         ];
 });
 };

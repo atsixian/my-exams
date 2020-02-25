@@ -1,6 +1,15 @@
 import toTable from "./Functions/toTable";
 import filterExams from "./Functions/filterExams.ts";
 import { filterCourses } from "./Functions/filterCourses";
+import formatDate from "./Functions/formatDate.ts"
+
+let day0 = "20-Apr";
+let day1 = "04/20/2020";
+test("testing formatDate", () => {
+  expect(formatDate(day0)).toEqual(new Date("20-Apr-2020"));
+  expect(formatDate(day1)).toEqual(new Date("20-Apr-2020"));
+});
+
 let list0 = [
   {
     name: "COMP-202-002: Foundations of Programming",
@@ -106,23 +115,23 @@ const exams0 = [
     "COURSE NUMBER": "COMP 250",
     SECTION: "001",
     TITLE: "Intro to Computer Science",
-    "EXAM DATE": "24-Apr",
-    TIME: "9:00",
-    BUILDING: "GYM",
-    ROOM: "FIELD HOUSE",
-    ROW: "1-23",
+    "EXAM DATE": "23-Apr",
+    TIME: "18:30",
+    BUILDING: "TBA",
+    "ROOM": "TBA",
+    "ROW": "TBA",
     FROM: "AAA",
     TO: "ZZZ"
   },
   {
     "COURSE NUMBER": "MATH 240",
     SECTION: "001",
-    TITLE: "Discrete Structures 1",
-    "EXAM DATE": "18-Apr",
-    TIME: "14:00",
-    BUILDING: "GYM",
-    ROOM: "FIELD HOUSE",
-    ROW: "10-20",
+    TITLE: "Discrete Structures",
+    "EXAM DATE": "22-Apr",
+    TIME: "9:00",
+    BUILDING: "TBA",
+    ROOM: "TBA",
+    ROW: "TBA",
     FROM: "AAA",
     TO: "ZZZ"
   }

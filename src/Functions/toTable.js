@@ -22,9 +22,8 @@ export default data => {
   const res = [];
 
   for (let [day, courses] of dates) {
-    day = formatDate(day);
     const row = {
-      key: new Date(day).toLocaleString("en-us", {
+      key: formatDate(day).toLocaleString("en-us", {
         month: "short",
         day: "numeric"
       }),
