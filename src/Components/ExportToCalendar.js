@@ -17,7 +17,7 @@ class ExportToCalendar extends Component{
       startTime.setHours(...time);
       let endTime = new Date(date);
       endTime.setHours(startTime.getHours()+3); //exams are 3 hours
-      cal.addEvent(course+'- FINAL','Final Exam of ' + course + ' -' + section, room+row, startTime, endTime);
+      cal.addEvent(`${course} FINAL`, `Final Exam of ${course}-${section}`, `${room} ${row}`, startTime, endTime);
     });
     let downloadCal = ()=>cal.download();
         return(
