@@ -4,7 +4,6 @@ import { Table, Modal } from "antd";
 import {Flex, Box} from 'reflexbox'
 import toTable from "../Functions/toTable";
 import {
-  CalendarTwoTone,
   HomeTwoTone,
   BookTwoTone,
   CompassTwoTone
@@ -88,11 +87,16 @@ export default props => {
           dataSource={tableData}
           bordered
           pagination={false}
-          title={() => <div> My Exam Schedules</div>}
+          title={() => (
+            <Flex>
+              <Box mx="auto">
+              <h2>My Exam Schedules</h2>
+              </Box>
+            </Flex>
+          )}
           footer={() => (
             <Flex>
               <Box mx="auto">
-                <CalendarTwoTone twoToneColor="#eb2f96" />{" "}
                 <ExportToCalendar exams={eventData} />
               </Box>
               <LogoutButton/>

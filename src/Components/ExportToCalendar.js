@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import {Button} from "antd";
 import {ics} from '../Libs/ics.js';
+import {CalendarTwoTone} from "@ant-design/icons";
 
 class ExportToCalendar extends Component{
     //props: string list list
@@ -30,7 +31,10 @@ class ExportToCalendar extends Component{
     });
     let downloadCal = ()=>cal.download();
         return(
-        <Button type="dashed" onClick={downloadCal}>Export to Calendar</Button>
+        <span>
+    
+          <Button type="dashed" onClick={downloadCal}><CalendarTwoTone twoToneColor="#eb2f96" />Export to Calendar</Button>
+        </span>
         )
     }
 }
