@@ -21,6 +21,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
     "reflexbox": "^4.0.6",
+    "typeface-sue-ellen-francisco": "^0.0.72",
     "typescript": "^3.8.2"
   },
   "scripts": {

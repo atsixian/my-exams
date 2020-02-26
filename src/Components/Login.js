@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import "antd/dist/antd.css";
 import "../index.css";
+import "typeface-sue-ellen-francisco"
 import { Form, Input, Button, Alert } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
@@ -29,9 +30,14 @@ export default () => {
     }
   };
   return (
-    <Flex>
-      <Box maxWidth="300px" mt="50%" mb="20%">
-      <LoginAlert status={authStatus}/>
+    <Flex flexDirection="row">
+      <Box maxWidth="300px" mt="20%" mb="20%">
+        <Flex>
+          <Box mx="auto">
+            <h1 style={{fontSize: "4.5vmax"}}>MY EXAMS</h1>
+          </Box>
+        </Flex>
+        <LoginAlert status={authStatus} />
         <Form name="normal_login" onFinish={onFinish}>
           <Form.Item
             name="username"
@@ -73,7 +79,9 @@ export default () => {
             >
               Log in
             </Button>
-            <Button className="login-form-button">See a demo without login</Button>
+            <Button style={{ marginTop: "5%"}} className="login-form-button">
+              See a demo without login
+            </Button>
           </Form.Item>
         </Form>
       </Box>

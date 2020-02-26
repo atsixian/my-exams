@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  color: "black"; /* fallback */
+  font-family: "sue ellen francisco";
+  background: linear-gradient(135deg, orange, orange 40%, cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
