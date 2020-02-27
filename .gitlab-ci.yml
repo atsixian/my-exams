@@ -1,0 +1,39 @@
+stages:
+  - build
+  - deploy
+
+build test:
+  stage: build
+  tags:
+    - docker-build
+  script:
+    - sudo -g docker docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - sudo -g docker docker build -t $CI_REGISTRY_IMAGE:test .
+    - sudo -g docker docker push $CI_REGISTRY_IMAGE:test
+
+deploy test:
+  stage: deploy
+  tags:
+    - docker-build
+  script:
+    - /deploy.sh exams test
+
+build prod:
+  stage: build
+  tags:
+    - docker-build
+  only:
+    - tags
+  script:
+    - sudo -g docker docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - sudo -g docker docker build -t $CI_REGISTRY_IMAGE:prod .
+    - sudo -g docker docker push $CI_REGISTRY_IMAGE:prod
+
+deploy prod:
+  stage: deploy
+  tags:
+    - docker-build
+  only:
+    - tags
+  script:
+    - /deploy.sh exams prod
