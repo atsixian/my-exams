@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 import {useCookies} from 'react-cookie';
 import { getToken } from "./Auth.js";
 import {Flex, Box} from 'reflexbox'
-
 const LoginAlert= (props)=>{
   return props.status?null:(<Alert message="Wrong username or password" type="error" showIcon />);
 };
@@ -78,9 +77,6 @@ export default () => {
               className="login-form-button"
             >
               Log in
-            </Button>
-            <Button style={{ marginTop: "5%"}} className="login-form-button">
-              See a demo without login
             </Button>
           </Form.Item>
         </Form>
