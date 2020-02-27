@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import {useCookies} from 'react-cookie';
 import { getToken } from "./Auth.js";
 import {Flex, Box} from 'reflexbox'
+import DemoButton from "./DemoButton.js"
 const LoginAlert= (props)=>{
   return props.status?null:(<Alert message="Wrong username or password" type="error" showIcon />);
 };
@@ -78,6 +79,7 @@ export default () => {
             >
               Log in
             </Button>
+            <DemoButton/>
           </Form.Item>
         </Form>
       </Box>

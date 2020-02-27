@@ -7,11 +7,7 @@ import Exam from "./Exam.js";
 import { AuthRoute } from "./Components/Auth";
 import { Flex } from "reflexbox";
 import ParticlesBg from "particles-bg";
-import { Button } from "antd";
 import Sample from "./Sample.js";
-
-const SeeDemo = <Button style={{ marginTop: "5%" }} className="login-form-button">
-See a demo without login</Button>;
 
 export default () => {
   return (
@@ -19,13 +15,14 @@ export default () => {
       <Router>
         <Flex justifyContent="center" alignContent="center">
           <Switch>
+            {/* Use exact path or "/sample" will first be matched with "/" */}
+            <Route exact path="/" component={LoginForm} />
             <AuthRoute path="/exam" component={Exam} />
-            <Route path="/" component={LoginForm} />
+            <Route path="/sample" component={Sample} />
           </Switch>
         </Flex>
         <ParticlesBg type="polygon" bg={true} />
       </Router>
     </CookiesProvider>
-    
   );
 };
