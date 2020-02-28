@@ -66,12 +66,15 @@ export default props => {
       title: "Conflict Detected",
       content: Object.keys(conflicts).map(
         key => (
+          <div>
           <li>
             <strong>
               {key} {conflicts[key].time}:
             </strong>{" "}
              {conflicts[key].courses.join(", ")}
           </li>
+          Please follow the <a href="https://www.mcgill.ca/exams/dates/conflicts">Exam Conflict Resolution</a>
+          </div>
         )
       ),
     });

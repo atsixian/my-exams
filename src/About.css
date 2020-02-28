@@ -1,0 +1,17 @@
+.header {
+    display: flex float;
+    text-align: center;
+    justify-content: center;
+  }
+  .ant-avatar {
+    margin-top: 16px;
+    margin-right: 16px;
+  }
+  .ant-carousel {
+    border-radius: 10px;
+    width: 90vw;
+  
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
