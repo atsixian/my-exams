@@ -3,7 +3,7 @@ import "antd/dist/antd.css";
 import "./About.css";
 import { Avatar, Carousel, Card, Typography, Row, Col } from "antd";
 import { Flex, Box } from "reflexbox";
-import { StarButton, FollowButton } from "./Components/StarButton";
+import { StarButton, FollowButton } from "./Components/GithubButton";
 const { Text } = Typography;
 
 const Title = (

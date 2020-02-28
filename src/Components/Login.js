@@ -10,7 +10,7 @@ import { getToken } from "./Auth.js";
 import {Flex, Box} from 'reflexbox'
 import DemoButton from "./DemoButton"
 import AboutButton from "./AboutButton"
-import {StarButton} from "./StarButton";
+import {StarButton} from "./GithubButton";
 
 const LoginAlert= (props)=>{
   return props.status?null:(<Alert message="Wrong username or password" type="error" showIcon />);
