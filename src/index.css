@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
+#logo {
   color: "black"; /* fallback */
   font-family: "sue ellen francisco";
   background: linear-gradient(135deg, orange, orange 40%, cyan);

@@ -8,7 +8,8 @@ import { useHistory } from "react-router-dom";
 import {useCookies} from 'react-cookie';
 import { getToken } from "./Auth.js";
 import {Flex, Box} from 'reflexbox'
-import DemoButton from "./DemoButton.js"
+import DemoButton from "./DemoButton"
+import AboutButton from "./AboutButton"
 const LoginAlert= (props)=>{
   return props.status?null:(<Alert message="Wrong username or password" type="error" showIcon />);
 };
@@ -34,7 +35,7 @@ export default () => {
       <Box maxWidth="300px" mt="20%" mb="20%">
         <Flex>
           <Box mx="auto">
-            <h1 style={{fontSize: "4.5vmax"}}>MY EXAMS</h1>
+            <h1 id="logo" style={{fontSize: "4.5vmax"}}>MY EXAMS</h1>
           </Box>
         </Flex>
         <LoginAlert status={authStatus} />
@@ -80,9 +81,11 @@ export default () => {
               Log in
             </Button>
             <DemoButton/>
+            <AboutButton/>
           </Form.Item>
         </Form>
       </Box>
     </Flex>
+
   );
 };

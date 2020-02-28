@@ -123,7 +123,7 @@ const Title = (
 
 export default () => {
     return(
-    <div>
+    <div className="page">
     {Title}
     <Flex flexWrap="wrap" justifyContent="center" alignItems="center">
       <Box flex="1 1 600px">{Cards}</Box>
