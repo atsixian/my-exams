@@ -10,6 +10,8 @@ import { getToken } from "./Auth.js";
 import {Flex, Box} from 'reflexbox'
 import DemoButton from "./DemoButton"
 import AboutButton from "./AboutButton"
+import {StarButton} from "./StarButton";
+
 const LoginAlert= (props)=>{
   return props.status?null:(<Alert message="Wrong username or password" type="error" showIcon />);
 };
@@ -33,9 +35,14 @@ export default () => {
   return (
     <Flex flexDirection="row">
       <Box maxWidth="300px" mt="20%" mb="20%">
-        <Flex>
-          <Box mx="auto">
-            <h1 id="logo" style={{fontSize: "4.5vmax"}}>MY EXAMS</h1>
+        <Flex flexDirection="column">
+          <Box m="auto" mb="-15%">
+            <h1 id="logo" style={{ fontSize: "4.5vmax" }}>
+              MY EXAMS
+            </h1>
+          </Box>
+          <Box m="auto">
+            <StarButton color="light" />
           </Box>
         </Flex>
         <LoginAlert status={authStatus} />
@@ -80,12 +87,11 @@ export default () => {
             >
               Log in
             </Button>
-            <DemoButton/>
-            <AboutButton/>
+            <DemoButton />
+            <AboutButton />
           </Form.Item>
         </Form>
       </Box>
     </Flex>
-
   );
 };
