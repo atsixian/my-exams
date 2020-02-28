@@ -36,12 +36,12 @@ export default () => {
     <Flex flexDirection="row">
       <Box maxWidth="300px" mt="20%" mb="20%">
         <Flex flexDirection="column">
-          <Box m="auto" mb="-15%">
+          <Box m="auto" mb="-8%">
             <h1 id="logo" style={{ fontSize: "4.5vmax" }}>
               MY EXAMS
             </h1>
           </Box>
-          <Box m="auto">
+          <Box m="auto" mb="2%">
             <StarButton color="light" />
           </Box>
         </Flex>
