@@ -29,7 +29,7 @@ const Safety = (
   <Card hoverable title={<Text mark>Is it safe</Text>}>
     This tool does not store your credentials. It transmits your credentials in
     a secure way to the McGill LDAP API, to query your courses. The API only
-    allows us to know the courses you're enrolled, not your grade or any kind of
+    reveals the courses you're enrolled, not your grade or any kind of
     personal privacy. You can review the source code{" "}
     <a href="https://github.com/deerhound579/my-exams">here</a>.
   </Card>
@@ -108,10 +108,10 @@ export default () => {
       </Flex>
       <Row gutter={[16, 16]}>
         <Col xs={24} md={12}>
-          {Motivation}
+          {Safety}
         </Col>
         <Col xs={24} md={12}>
-          {Safety}
+          {Motivation}
         </Col>
       </Row>
     </div>
