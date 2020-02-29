@@ -6,7 +6,7 @@ export default () => {
   const history = useHistory();
   return (
     <Button onClick={() => history.push("/about")} style={{ marginTop: "5%" }} className="login-form-button">
-      Learn More
+      Is it safe?
     </Button>
   );
 };
