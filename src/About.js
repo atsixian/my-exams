@@ -97,7 +97,7 @@ export default () => {
         <Box flex="1 1.5 100px">
           <Flex flexDirection="column" alignItems="center">
             <Box py={3}>
-              <StarButton color="dark" />>
+              <StarButton color="dark" />
             </Box>
             <Box py={2}>{SixianAvatar}</Box>
             {SixianGithub}
