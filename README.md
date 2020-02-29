@@ -19,4 +19,4 @@ Searching for exams in a PDF is painful. We feel it. While some existing tools a
 
 ## Is it safe?
 
-This tool does not store your credentials. It transmits your credentials in a secure way to the McGill LDAP API, to query your courses. The API only allows us to know the courses you're enrolled, not your grade or any kind of personal privacy.
+This tool does not store your credentials. It transmits your credentials in a secure way to the McGill LDAP API, to query your courses. The API only reveals the courses you're enrolled, not your grade or any kind of personal privacy.
