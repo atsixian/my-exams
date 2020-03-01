@@ -3,11 +3,11 @@ import { Redirect, Route } from "react-router-dom";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { useCookies } from "react-cookie";
-
+import formatUsername from "../Functions/formatUsername"
 export const getToken = async ({ username, password }) => {
   const res = await axios.post(
     "https://ninshou.test.ctf.science.mcgill.ca/api/v1/authenticate/simple",
-    { email: username + "@mail.mcgill.ca", password: password }
+    { email: username + formatUsername(username), password: password }
   );
   return res.data;
 };
