@@ -2,6 +2,14 @@ import toTable from "./Functions/toTable";
 import filterExams from "./Functions/filterExams.ts";
 import { filterCourses } from "./Functions/filterCourses";
 import formatDate from "./Functions/formatDate.ts"
+import formatUsername from "./Functions/formatUsername"
+
+const nameWithPostfix = "first.last@mail.mcgill.ca";
+const nameWithoutPostfix = "first.last";
+test("testing formatUsername", () => {
+  expect(formatUsername(nameWithPostfix)).toEqual("first.last@mail.mcgill.ca");
+  expect(formatUsername(nameWithoutPostfix)).toEqual("first.last@mail.mcgill.ca");
+});
 
 let day0 = "20-Apr";
 let day1 = "04/20/2020";

@@ -7,7 +7,7 @@ import formatUsername from "../Functions/formatUsername"
 export const getToken = async ({ username, password }) => {
   const res = await axios.post(
     "https://ninshou.test.ctf.science.mcgill.ca/api/v1/authenticate/simple",
-    { email: username + formatUsername(username), password: password }
+    { email: formatUsername(username), password: password }
   );
   return res.data;
 };
