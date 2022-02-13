@@ -1,3 +1,7 @@
+
+This project is no longer maintained. A new version is at https://myexams2.vercel.app/, maintained by https://github.com/jiahao-c/myexams2.
+---
+
 # myExams
 **Finally, you can see all your exam schedules, effortlessly** 
 
